@@ -68,7 +68,16 @@ function addPagination(list) {
    const firstPageButton = document.querySelector("button");
    firstPageButton.className = "active";
 
-   
+   linkList.addEventListener("click", (e) => {
+      const buttons = document.getElementsByTagName("BUTTON");
+      if (e.target.tagName === "BUTTON") {
+         for (let button of buttons) {
+            button.className = "";
+         }
+         e.target.className = "active";
+         showPage(list, e.target.textContent)
+      }
+   });
 }
 
 // Call functions
