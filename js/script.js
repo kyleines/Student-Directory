@@ -61,7 +61,7 @@ function showPage(list, page) {
 ***/
 
 function addPagination(list) {
-   let pages = Math.round(list.length / 9);
+   let pages = Math.ceil(list.length / 9);
    const linkList = document.querySelector(".link-list");
    linkList.innerHTML = "";
    for (let i = 1; i <= pages; i++) {
